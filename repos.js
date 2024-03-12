@@ -1,12 +1,3 @@
-const username = 'abuanwar072'
-const github_accessToken = getAccessToken()
-const userApiUrl = `https://api.github.com/users/${username}`
-const reposApiUrl = `https://api.github.com/users/${username}/repos`
-
-let currentPage = 1, totalRepos = 0
-const itemsPerPage = 30
-
-
 const getAccessToken = async () => {
     try {
       const response = await fetch('./functions/getAccessToken')
@@ -23,6 +14,14 @@ const getAccessToken = async () => {
       console.error('Error fetching access token:', error);
     }
 };
+
+const username = 'abuanwar072'
+const github_accessToken = getAccessToken()
+const userApiUrl = `https://api.github.com/users/${username}`
+const reposApiUrl = `https://api.github.com/users/${username}/repos`
+
+let currentPage = 1, totalRepos = 0
+const itemsPerPage = 30
 
 // Fetch the total number of public repositories
 fetch(userApiUrl, {
