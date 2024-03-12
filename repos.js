@@ -1,6 +1,6 @@
 const getAccessToken = async () => {
     try {
-      const response = await fetch('./functions/getAccessToken')
+      const response = await fetch('./functions/getAccessToken.js')
       const data = await response.json();
   
       if (response.ok) {
